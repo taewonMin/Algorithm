@@ -1,4 +1,4 @@
-package problem;
+package problem.Math1;
 
 import java.util.Scanner;
 
