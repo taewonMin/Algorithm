@@ -5,6 +5,7 @@ import java.util.Stack;
 public class Dolldraw {
 	public static void main(String[] args) {
 		Solution sol = new Solution();
+		
 		int[][] board = {
 							{0,0,0,0,0},
 							{0,0,1,0,3},
@@ -13,7 +14,7 @@ public class Dolldraw {
 							{3,5,1,3,1}
 						};
 		int[] moves = {1,5,3,5,1,2,1,4};
-		System.out.println(sol.solution(board, moves));
+		System.out.println("박살난 인형수 : "+ sol.solution(board, moves));
 	}
 }
 
