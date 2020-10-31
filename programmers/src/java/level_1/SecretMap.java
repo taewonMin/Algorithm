@@ -1,4 +1,4 @@
-package level_1;
+package java.level_1;
 
 public class SecretMap {
 	class Solution {
