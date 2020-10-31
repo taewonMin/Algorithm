@@ -1,4 +1,4 @@
-package java.level_1;
+package level_1;
 
 public class Collatz {	//콜라츠 추측
 	class Solution {
