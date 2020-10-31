@@ -1,6 +1,6 @@
 package level_1;
 
-public class Collatz {	//콜라츠 추측
+public class Collatz {
 	class Solution {
 	    public int solution(int num) {
 	        int answer = 0;
