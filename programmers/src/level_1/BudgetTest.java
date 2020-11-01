@@ -2,7 +2,7 @@ package level_1;
 
 import java.util.Arrays;
 
-public class BudgetTest {	//¿¹»ê
+public class BudgetTest {	//ì˜ˆì‚°
 	class Solution {
 	    public int solution(int[] d, int budget) {
 	        int answer = 0;
