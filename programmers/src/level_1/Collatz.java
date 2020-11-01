@@ -1,18 +1,18 @@
 package level_1;
 
-public class Collatz {	//Äİ¶óÃ÷ ÃßÃø
+public class Collatz {	//ì½œë¼ì¸  ì¶”ì¸¡
 	class Solution {
 	    public int solution(int num) {
 	        int answer = 0;
-	        long num2 = num;    // int·Î ÇÏ¸é overflow°¡ »ı±æ ¼ö ÀÖÀ½
+	        long num2 = num;    // intë¡œ í•˜ë©´ overflowê°€ ìƒê¸¸ ìˆ˜ ìˆìŒ
 	        while(num2!=1){
 	        	if(answer==500){
 	        		answer = -1;
 	        		break;
 	        	}
-	        	if(num2%2==0){	// Â¦¼öÀÌ¸é
+	        	if(num2%2==0){	// ì§ìˆ˜ì´ë©´
 	        		num2 /= 2;
-	        	}else{	// È¦¼öÀÌ¸é
+	        	}else{	// í™€ìˆ˜ì´ë©´
 	        		num2 = 3*num2 + 1;
 	        	}
 	        	answer++;
