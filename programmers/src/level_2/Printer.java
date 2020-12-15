@@ -32,7 +32,6 @@ public class Printer {	// 프린터
 	        		}
 	        	}
 	        }
-	        
 	        return answer;
 	    }
 	}
