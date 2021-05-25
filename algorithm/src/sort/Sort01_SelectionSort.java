@@ -11,7 +11,7 @@ package sort;
  * 1 2 3 4 5 6 7 8 10 9
  * 1 2 3 4 5 6 7 8 9 10
  */
-public class SelectionSort {
+public class Sort01_SelectionSort {
 	public static void main(String[] args) {
 		int[] arr = {1, 10, 5, 8, 7, 6, 4, 3, 2, 9};
 		for(int i=0; i<arr.length; i++) {
