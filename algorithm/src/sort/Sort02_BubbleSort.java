@@ -21,7 +21,7 @@ package sort;
  * :
  * 1 5 7 6 4 3 2 8 9 10
  */
-public class BubbleSort {
+public class Sort02_BubbleSort {
 	public static void main(String[] args) {
 		int[] arr = {1, 10, 5, 8, 7, 6, 4, 3, 2, 9};
 		for(int i=0; i<arr.length; i++) {
