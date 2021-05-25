@@ -13,7 +13,7 @@ package sort;
  * 1 2 (3) 4 5 6 7 8 10 9
  * 1 2 3 4 5 6 7 8 (9) 10
  */
-public class InsertionSort {
+public class Sort03_InsertionSort {
 	public static void main(String[] args) {
 		int[] arr = {1, 10, 5, 8, 7, 6, 4, 3, 2, 9};
 		for(int i=0; i<arr.length-1; i++) {
