@@ -1,4 +1,4 @@
-package primeNumberSieve;
+package math;
 
 import java.util.ArrayList;
 import java.util.Arrays;
