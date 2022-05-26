@@ -14,20 +14,21 @@ public class SetAndMap_1620 {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int[] input = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-        String[] pocketmon = new String[input[0]];
+        String[] dogam = new String[input[0]];
+        Pocketmon[] sortDogam = new Pocketmon[input[0]];
         for(int i=0; i<input[0]; i++){
-            pocketmon[i] = br.readLine();
+            dogam[i] = br.readLine();
+            sortDogam[i] = new Pocketmon(i+1, dogam[i]);
         }
 
-        String[] sortArray = Arrays.copyOf(pocketmon, pocketmon.length);
-        Arrays.sort(sortArray);
+        Arrays.sort(sortDogam, (o1, o2) -> o1.name.compareTo(o2.name));
 
         for(int i=0; i<input[1]; i++){
             String quiz = br.readLine();
             if(quiz.matches("\\d+")){
-                bw.write(pocketmon[Integer.parseInt(quiz)-1]+"\n");
+                bw.write(dogam[Integer.parseInt(quiz)-1]+"\n");
             }else{
-
+                bw.write(binarySearch(quiz, sortDogam)+"\n");
             }
         }
 
@@ -36,4 +37,31 @@ public class SetAndMap_1620 {
         bw.close();
     }
 
+    public static int binarySearch(String target, Pocketmon[] array){
+        int lo = 0; 
+        int hi = array.length-1;
+
+        while(lo <= hi){
+            int mid = (hi+lo)/2;
+
+            if(array[mid].name.compareTo(target)==0){
+                return array[mid].index;
+            }else if(array[mid].name.compareTo(target) < 0){
+                lo = mid+1;
+            }else{
+                hi = mid-1;
+            }
+        }
+        return -1;
+    }
+
+    static class Pocketmon {
+        int index;
+        String name;
+
+        Pocketmon(int index, String name){
+            this.index = index;
+            this.name = name;
+        }
+    }
 }
