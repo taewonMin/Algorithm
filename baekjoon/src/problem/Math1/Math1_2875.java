@@ -12,7 +12,6 @@ public class Math1_2875 {
         int K = sc.nextInt();
 
         while(N>0 && M>0 && K>0){
-            System.out.println(Math.ceil(N/2d));
             int manCnt = (int)(M - Math.ceil(N/2d));
             if(manCnt >= 0){ // 남자가 더 많거나 딱 맞으면
                 M--;
