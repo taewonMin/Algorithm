@@ -1,4 +1,4 @@
-package problem.SetAndMap;
+package problem.DataStructure;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 // 대칭 차집합
-public class SetAndMap_1269 {
+public class DataStructure_1269 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
