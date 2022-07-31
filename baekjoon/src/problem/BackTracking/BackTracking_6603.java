@@ -11,15 +11,19 @@ import java.util.Arrays;
 public class BackTracking_6603 {
     public static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     public static String[] arr = new String[6];
+    public static int N;
+    public static int[] numbers;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
         while(true){
-            int[] input = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-            if(input[0]==0){
+            numbers = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+            N = numbers[0];
+            if(N==0){
                 break;
             }
-            lotto(0, input[0]-6, 0, input);
+            // lotto(0, N-6, 0);
+            dfs(0, 0);
             bw.newLine();
         }
 
@@ -28,17 +32,32 @@ public class BackTracking_6603 {
         bw.close();
     }
 
-    public static void lotto(int cnt, int remain, int idx, int[] input) throws IOException{
+    // 백트래킹 방법
+    public static void lotto(int cnt, int remain, int idx) throws IOException{
         if(cnt==6){
             bw.write(String.join(" ", arr));
             bw.newLine();
             return;
         }
 
-        arr[cnt] = String.valueOf(input[idx+1]);    
-        lotto(cnt+1, remain, idx+1, input); // 선택
+        arr[cnt] = String.valueOf(numbers[idx+1]);    
+        lotto(cnt+1, remain, idx+1); // 선택
         if(remain > 0){
-            lotto(cnt, remain-1, idx+1, input); // 미선택
+            lotto(cnt, remain-1, idx+1); // 미선택
+        }
+    }
+
+    // dfs
+    public static void dfs(int cnt, int start) throws IOException{
+        if(cnt == 6){
+            bw.write(String.join(" ", arr));
+            bw.newLine();
+            return;
+        }
+
+        for(int i=start; i<N; i++){
+            arr[cnt] = String.valueOf(numbers[i+1]);
+            dfs(cnt+1, i+1);
         }
     }
 }
