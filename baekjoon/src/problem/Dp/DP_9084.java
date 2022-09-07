@@ -15,18 +15,14 @@ public class DP_9084 {
             int N = Integer.parseInt(br.readLine());
             int[] coins = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
             int M = Integer.parseInt(br.readLine());
-            int[][] dp = new int[N+1][M+1];
-            for(int j=1; j<=N; j++){
-                dp[j][0] = 1;
-                for(int k=1; k<=M; k++){
-                    if(k < coins[j-1]){
-                        dp[j][k] = dp[j-1][k];
-                    }else{
-                        dp[j][k] = dp[j-1][k]+dp[j][k-coins[j-1]];
-                    }
+            int[] dp = new int[M+1];
+            dp[0] = 1;
+            for(int j=0; j<N; j++){
+                for(int k=coins[j]; k<=M; k++){
+                    dp[k] += dp[k-coins[j]];
                 }
             }
-            System.out.println(dp[N][M]);
+            System.out.println(dp[M]);
         }
 
         br.close();
