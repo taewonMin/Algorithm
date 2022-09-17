@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.PriorityQueue;
 
 // 물대기
-public class MST_1368 {
+public class MST_1368_Prim {
     public static List<Node>[] tree;
     public static boolean[] visited;
 
