@@ -9,7 +9,7 @@ import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
 // 최소 스패닝 트리
-public class MST_1197 {
+public class MST_1197_Prim {
     public static List<Edge>[] tree;
     public static boolean[] visited;
     static class Edge implements Comparable<Edge>{
