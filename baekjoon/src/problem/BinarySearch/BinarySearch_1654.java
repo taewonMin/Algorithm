@@ -3,6 +3,7 @@ package problem.BinarySearch;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 // 랜선 자르기
@@ -18,6 +19,8 @@ public class BinarySearch_1654 {
         for(int i=0; i<K; i++){
             arr[i] = Integer.parseInt(br.readLine());
         }
+        Arrays.sort(arr);
+        
         System.out.println(binarySearch(N));
 
         br.close();
