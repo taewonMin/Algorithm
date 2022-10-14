@@ -17,10 +17,14 @@ public class DP_15988 {
         dp[1] = 1;
         dp[2] = 2;
         dp[3] = 4;
+
+        bottomUp(1000000);
+        
         int T = Integer.parseInt(br.readLine());
         for(int t=0; t<T; t++){
             int n = Integer.parseInt(br.readLine());
-            bw.write(getNum(n)+"\n");
+            // bw.write(topDown(n)+"\n");
+            bw.write(dp[n]+"\n");
         }
 
         br.close();
@@ -28,8 +32,15 @@ public class DP_15988 {
         bw.close();
     }
 
-    public static int getNum(int n){
+    public static int topDown(int n){
         if(dp[n]!=0) return dp[n];
-        return dp[n] = ((getNum(n-3)+getNum(n-2))%MOD+getNum(n-1))%MOD;
+        return dp[n] = ((topDown(n-3)+topDown(n-2))%MOD+topDown(n-1))%MOD;
+    }
+
+    public static int bottomUp(int n){
+        for(int i=4; i<=n; i++){
+            dp[i] = ((dp[i-1]+dp[i-2])%MOD+dp[i-3])%MOD;
+        }
+        return dp[n];
     }
 }
