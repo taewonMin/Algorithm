@@ -2,12 +2,6 @@ package kakao.blind_recruitment_2020;
 
 // 괄호 변환
 public class Prob_60058 {
-    public static void main(String[] args) {
-        System.out.println(new Solution().solution("(()())()"));
-    }
-}
-
-class Solution {
     public String solution(String p) {
         return seperate(p.toCharArray());
     }
